@@ -9,53 +9,143 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 20px;
-      background-color: #f0f0f0;
+      padding: 0;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      color: #333;
     }
 
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
+    header {
+      background-color: #515151;
+      color: white;
+      padding: 1rem 0;
       text-align: center;
     }
 
-    ul {
-      list-style-type: none;
-      padding: 0;
+    header h1 {
+      margin: 0;
     }
 
-    li {
-      margin: 10px 0;
+    nav {
+      background-color: #444;
+      padding: 0.5rem 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      background-color: #007acc;
+      margin: 0 1rem;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #005fa3;
+      color: #e0e0e0;
+    }
+
+    .container {
+      padding: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .grid .button {
+      background-color: #e0a839;
+      color: white;
+      border: none;
+      padding: 2rem;
+      border-radius: 20px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-align: center;
+    }
+
+    .grid .button:hover {
+      background-color: #e66909;
     }
 
     a {
       text-decoration: none;
-      color: #007bff;
-      font-weight: bold;
+      /* This removes the underline */
     }
 
-    a:hover {
-      text-decoration: underline;
+    footer {
+      background-color: #515151;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    footer img {
+      width: 50px;
+      /* Adjust as needed */
+      height: auto;
+      vertical-align: middle;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin-left: 0.5rem;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 1rem;
+      }
+
+      .grid .button {
+        padding: 1rem;
+        font-size: 1rem;
+      }
+
+      footer img {
+        width: 40px;
+        /* Adjust for smaller screens */
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+  <header>
     <h1>Makepad WASM Applications</h1>
-    <ul>
-      <li><a href="/image_manipulation">Image Manipulation</a></li>
-      <li><a href="/makepad_taobao">Makepad TaoBao</a></li>
-      <li><a href="/wonderous">Makepad Wonderous</a></li>
-    </ul>
+  </header>
+  <div class="container">
+    <div class="grid">
+      <button class="button"><a href="/image_manipulation">Image Manipulation</a></button>
+      <button class="button"><a href="/makepad_taobao">Makepad TaoBao</a></button>
+      <button class="button"><a href="/wonderous">Makepad Wonderous</a></button>
+    </div>
   </div>
+  <footer>
+    <img src="robius-logo.png" alt="Logo">
+    <a href="https://github.com/project-robius">Project Robius</a>
+  </footer>
 </body>
 
 </html>
